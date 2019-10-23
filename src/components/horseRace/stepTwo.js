@@ -3,7 +3,7 @@ import imgStepTwo from '../../assets/horseStepTwo.jpg'
 
 const StepTwo = () => {
   return (
-    <div>
+    <div className="help">
       <h3>Step 2: Race the first place horse from your first set of races.</h3>
       <p>You now know the winner of this race is the 1st place horse. (1A in image below)</p>
       <br />

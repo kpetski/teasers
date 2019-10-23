@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import Home from './views/home';
 import HorseRace from './views/horseRace';
+import BagsOfCoints from './views/bagsOfCoins'
 import Navigation from './components/nav';
 import About from './views/about';
 
@@ -22,6 +23,7 @@ class App extends Component {
         <div id="main" className="content-container">
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/coins' component={BagsOfCoints} />
               <Route exact path='/horserace' component={HorseRace} />
               <Route exact path='/about' component={About} />
               <Route render={ () => ( <Redirect to='/' />) } />

@@ -85,6 +85,12 @@ class MovieGeekNav extends Component {
           />
           <Divider />
           <MenuItem
+            primaryText="Bag of Coins"
+            containerElement={<Link to="/coins" />}
+            onClick={this.handleMenuOpen}
+          />
+          <Divider />
+          <MenuItem
             primaryText="About"
             rightIcon={<About />}
             containerElement={<Link to="/about" />}

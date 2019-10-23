@@ -3,7 +3,7 @@ import imgStepThree from '../../assets/horseStepThree.jpg'
 
 const StepThree = () => {
   return (
-    <div>
+    <div className="help">
       <h3>Step 3: One more race to determin 2nd and 3rd</h3>
       <p>Per previous step, we know the winner (1A in image below)</p>
       <br />
