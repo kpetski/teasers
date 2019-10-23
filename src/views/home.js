@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import icon from '../assets/teaser.jpg';
 import { homeStyle } from '../utils/constants';
 import '../style/home.css'

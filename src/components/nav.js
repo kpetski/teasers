@@ -6,21 +6,16 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle';
 import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
 import ActionHome from 'material-ui/svg-icons/action/home';
-import Favorite from 'material-ui/svg-icons/action/favorite';
 import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
-import Key from 'material-ui/svg-icons/communication/vpn-key';
 import About from 'material-ui/svg-icons/action/help';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import WhatsHot from 'material-ui/svg-icons/social/whatshot';
 import {fullWhite} from 'material-ui/styles/colors';
 
 import Title from '../components/title';
-import { LOAD_USER } from '../store/actions';
 
 class MovieGeekNav extends Component {
   constructor(props) {
@@ -123,12 +118,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    userLogout() {
-      dispatch({type: LOAD_USER, action: undefined});
-    }
-  }
-}
-
-export default withRouter( connect(mapStateToProps, mapDispatchToProps)(MovieGeekNav) );
+export default withRouter( connect(mapStateToProps)(MovieGeekNav) );
