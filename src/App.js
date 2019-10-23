@@ -1,0 +1,63 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import './App.css';
+import {
+  Switch,
+  Route,
+  Redirect,
+  withRouter
+} from 'react-router-dom';
+import { getFlashWatch } from './store/actions';
+import Home from './views/home';
+import HorseRace from './views/horseRace';
+import Navigation from './components/nav';
+import FlashWatch from './views/flashwatch';
+import About from './views/about';
+
+class App extends Component {
+  constructor(props){
+    super(props);
+ }
+  componentDidMount(){
+    this.props.dispatchGetFlashWatch()
+  }
+
+  render() {
+    //console.log(this.props.user)
+    return (
+      <div className="App" style={ {color: `#fff`} }>
+        <Navigation />
+
+        <div id="main" className="content-container">
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/horserace' component={HorseRace} />
+              <Route exact path='/flashwatch' component={FlashWatch} />
+              <Route exact path='/about' component={About} />
+              <Route render={ () => ( <Redirect to='/' />) } />
+            </Switch>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    viewData: state.viewData,
+    loadingData: state.loadingData,
+    flashWatchData: state.flashWatchData,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchGetFlashWatch(){
+      dispatch(getFlashWatch())
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+
